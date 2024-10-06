@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark-Blue: #3D52A0;
+    --light-blue: #7091e6;
+    --dark-grey: #8697c4;
+    --grey: #adbbda;
+    --light-grey: #ede8f5;
+
+    --white: #fff;
+
+    --black: #0b0c10;
+    --light-black: #1f2833;
+    --grey2: #c5c6c7;
+    --light-sky: #66fcf1;
+    --dark-sky: #45a29e;
+}
+
+body {
+    background: var(--grey);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+
+/* sidebar */
+#h3sidebar {
+    position: fixed;
+    width: 260px;
+    background: var(--light-grey);
+    top: 0;
+    left: 0;
+    height: 100%;
+    font-weight: 600;
+}
+
+#h3sidebar .h3logo {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    font-weight: 700; 
+    color: var(--light-sky)
+}
+
+#h3sidebar .h3logo-img {
+    width: 80%;
+    height: 100%;
+}
+
+#h3sidebar .h3icon {
+    min-width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#h3sidebar .h3icon-right {
+    margin-left: auto;
+}
+
+#h3sidebar .h3side-menu {
+    margin: 36px 0;
+    padding: 0 20px;
+}
+
+#h3sidebar .h3side-menu a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--black);
+    padding: 12px 16px 12px 0;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 4px 0;
+}
+
+#h3sidebar .h3side-menu > li > a:hover {
+    background: var(--grey);
+}
+
+#h3sidebar .h3side-menu > li > a.h3active,
+#h3sidebar .h3side-menu > li > a.h3active:hover{
+    background: var(--dark-grey);
+    color: #fff;
+}
+
+#h3sidebar .h3divider {
+    margin-top: 24px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--dark-grey);
+}
+
+#h3sidebar .h3side-dropdown {
+    padding-left: 48px;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.15s ease;
+}
+
+#h3sidebar .h3side-dropdown.show {
+    max-height: 1000px;
+}
+
+#h3sidebar .h3side-dropdown a:hover {
+    color: var(--grey);
+}
+
+
+/* sidebar */

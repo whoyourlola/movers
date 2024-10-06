@@ -103,7 +103,7 @@
 }
 
 .h3sidebar ul li .h3tooltip {
-    position: fixed;
+    position: absolute;
     left: 125px;
     top: 50%;
     transform: translate(-50%, -50%);

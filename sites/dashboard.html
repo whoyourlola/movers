@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-------sidebar-------->
+<div class="h3sidebar">
+      <div class="h3top">
+          <div class="h3logo">
+              <img src="images/logo.png" alt class="h3logo-img">
+          </div>
+              <i class="bx bx-menu" id="h3btn"></i>
+      </div>     
+    <ul>
+        <li>
+            <a href="dashboard.html">
+              <i class="bx bxs-dashboard"></i> 
+              <span class="h3nav-item">Dashboard</span>
+            </a>
+            <span class="h3tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="attendance.html">
+              <i class="bx bx-calendar"></i> 
+              <span class="h3nav-item">Attendance</span>
+            </a>
+            <span class="h3tooltip">Attendance</span>
+        </li>
+        <li>
+            <a href="#">
+              <i class="bx bxs-edit"></i> 
+              <span class="h3nav-item">Leave Request</span>
+            </a>
+            <span class="h3tooltip">Leave Request</span>
+        </li>
+        <li>
+            <a href="#">
+              <i class="bx bxs-shield"></i> 
+              <span class="h3nav-item">Health and Safety</span>
+            </a>
+            <span class="h3tooltip">Health and Safety</span>
+        </li>
+        <li>
+            <a href="#">
+              <i class="bx bx-cog"></i> 
+              <span class="h3nav-item">Settings</span>
+            </a>
+            <span class="h3tooltip">Settings</span>
+        </li>
+        <li>
+            <a href="#">
+              <i class="bx bx-log-out"></i> 
+              <span class="h3nav-item">Logout</span>
+            </a>
+            <span class="h3tooltip">Logout</span>
+        </li>
+    </ul>
+</div>
+
+<div class="h3main-content">
+    <div class="h3dashboardcontainer">
+        <img src="images/light.jpg" alt="bg">
+    </div>
+
+</div>
+</body>
+<script>
+    let h3btn = document.querySelector('#h3btn');
+    let h3sidebar = document.querySelector('.h3sidebar');
+
+    h3btn.onclick = function () {
+        h3sidebar.classList.toggle('active');
+    };
+</script>
+</html>
