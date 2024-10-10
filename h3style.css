@@ -8,12 +8,13 @@
 }
 
 :root {
-    --Dark-Blue: #3D52A0;
+    --dark-blue: #3D52A0;
     --light-blue: #7091e6;
     --dark-grey: #8697c4;
     --grey: #adbbda;
     --light-grey: #ede8f5;
 
+    --blue: #0000FF;
     --white: #fff;
     --red: #ff0000;
 
@@ -25,7 +26,7 @@
 }
 
 body {
-    background: var(--grey);
+    background: var(--light-grey);
 }
 
 a {
@@ -43,14 +44,14 @@ li {
 #h3sidebar {
     position: fixed;
     width: 260px;
-    background: var(--light-grey);
+    background: var(--light-blue);
     top: 0;
     left: 0;
     height: 100%;
     font-weight: 600;
     overflow-y: auto;
     scrollbar-width: none;
-
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 #sidebar::-webkit-scrollbar {
@@ -70,7 +71,6 @@ li {
 #h3sidebar .h3logo-img {
     width: 80%;
     height: 90%;
-
 }
 
 #h3sidebar .h3icon {
@@ -100,19 +100,21 @@ li {
     transition: all 0.3s ease;
     border-radius: 10px;
     margin: 4px 0;
+    font-weight: 600;
 }
 
 #h3sidebar .h3side-menu > li > a:hover {
-    background: var(--grey);
+    background: var(--light-grey);
 }
 #h3sidebar .h3side-menu > li > a.h3side-active .h3icon-right{
     transform: rotateZ(90deg);
+    transition: all .3s ease;
 }
 
 #h3sidebar .h3side-menu > li > a.h3side-active,
 #h3sidebar .h3side-menu > li > a.h3side-active:hover{
-    background: var(--dark-grey);
-    color: #fff;
+    background: var(--light-grey);
+    color: var(--black);
 }
 
 #h3sidebar .h3side-divider {
@@ -120,7 +122,7 @@ li {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
-    color: var(--dark-grey);
+    color: var(--light-grey);
 }
 
 #h3sidebar .h3side-dropdown {
@@ -135,7 +137,7 @@ li {
 }
 
 #h3sidebar .h3side-dropdown a:hover {
-    color: var(--grey);
+    color: var(--light-grey);
 }
 
 
@@ -149,12 +151,13 @@ li {
 }
 /* NavBar */
 nav {
-    background: var(--light-grey);
+    background: var(--light-blue);
     height: 64px;
     padding: 0 20px;
     display: flex;
     align-items: center;
     grid-gap: 28px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 nav .h3toggle-sidebar{
@@ -179,7 +182,7 @@ nav .h3form-group input {
     outline: none;
     padding: 10px 36px 10px 16px;
     background: var(--white);
-    transition: all .3 ease;
+    transition: all .3s ease;
 }
 
 nav .h3form-group input:focus {
@@ -250,7 +253,7 @@ nav .h3profile .h3profile-link {
     width: 160px;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.5 ease;
+    transition: all 0.5s ease;
 }
 
 nav .h3profile .h3profile-link.show {
@@ -266,11 +269,44 @@ nav .h3profile .h3profile-link a {
     font-size: 14px;
     color: var(--black);
     align-items: center;
-    transition: all .3 ease;
+    transition: all .3s ease;
 }
 
 nav .h3profile .h3profile-link a:hover {
     background: var(--grey);
 }
 /* NavBar */
+
+/* Main */
+main {
+    width: 100%;
+    padding: 24px 20px 20px 20px;
+}
+
+main .h3title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+main .h3breadcrumbs {
+    display: flex;
+    grid-gap: 6px;
+}
+
+main .h3breadcrumbs li,
+main .h3breadcrumbs li a {
+    font-size: 14px;
+}
+
+main .h3breadcrumbs li a {
+    color: var(--blue);
+}
+
+main .h3breadcrumbs li a.h3active,
+main .h3breadcrumbs li a.h3divider {
+    color: var(--grey);
+    pointer-events: none;
+}
+/* Main */
 /* Content */
