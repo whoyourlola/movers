@@ -17,12 +17,17 @@
     --blue: #0000FF;
     --white: #fff;
     --red: #ff0000;
+    --green: #81d438;
 
     --black: #0b0c10;
     --light-black: #1f2833;
     --grey2: #c5c6c7;
     --light-sky: #66fcf1;
     --dark-sky: #45a29e;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 body {
@@ -43,7 +48,8 @@ li {
 /* sidebar */
 #h3sidebar {
     position: fixed;
-    width: 260px;
+    max-width: 260px;
+    width: 100%;
     background: var(--light-blue);
     top: 0;
     left: 0;
@@ -52,11 +58,35 @@ li {
     overflow-y: auto;
     scrollbar-width: none;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 200;
 }
 
+#h3sidebar.hide {
+    max-width: 60px;
+}
+#h3sidebar.hide:hover {
+    max-width: 260px;
+}
 #sidebar::-webkit-scrollbar {
     display: none;
 }
+
+/*#sidebar .brand {
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	height: 64px;
+	font-weight: 700;
+	color: var(--blue);
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: var(--light);
+	transition: all .3s ease;
+	padding: 0 6px;
+}*/
 
 #h3sidebar .h3logo {
     font-size: 24px;
@@ -64,13 +94,16 @@ li {
     justify-content: center;
     align-items: center;
     height: 64px;
-    font-weight: 700; 
-    color: var(--light-sky)
 }
 
-#h3sidebar .h3logo-img {
+#h3sidebar .h3logo img {
     width: 80%;
-    height: 90%;
+    z-index: 100;
+    top: 0;
+	left: 0;
+    transition: all .3s ease;
+    padding: 20px 0 0 0;
+    background: var(--light-blue);
 }
 
 #h3sidebar .h3icon {
@@ -78,16 +111,26 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 6px;
 
 }
 
 #h3sidebar .h3icon-right {
     margin-left: auto;
-    transition: all .5 ease;
+    transition: all .3s ease;
 }
 
 #h3sidebar .h3side-menu {
     margin: 36px 0;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+#h3sidebar.hide .h3side-menu {
+    padding: 0 6px;
+}   
+
+#h3sidebar.hide:hover .h3side-menu{
     padding: 0 20px;
 }
 
@@ -101,6 +144,7 @@ li {
     border-radius: 10px;
     margin: 4px 0;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 #h3sidebar .h3side-menu > li > a:hover {
@@ -117,16 +161,26 @@ li {
     color: var(--black);
 }
 
+#h3sidebar.hide:hover .h3side-divider {
+    text-align: left;
+}
+
 #h3sidebar .h3side-divider {
     margin-top: 24px;
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--light-grey);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#h3sidebar.hide .h3side-divider {
+    text-align: center;
 }
 
 #h3sidebar .h3side-dropdown {
-    padding-left: 48px;
+    padding-left: 54px;
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.15s ease;
@@ -148,7 +202,14 @@ li {
     position: relative;
     width: calc(100% - 260px);
     left: 260px;
+    transition: all 0.3s ease;
 }
+
+#h3sidebar.hide + #h3content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
 /* NavBar */
 nav {
     background: var(--light-blue);
@@ -158,6 +219,10 @@ nav {
     align-items: center;
     grid-gap: 28px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 nav .h3toggle-sidebar{
@@ -308,5 +373,88 @@ main .h3breadcrumbs li a.h3divider {
     color: var(--grey);
     pointer-events: none;
 }
+
+main .h3info-data {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 20px;
+}
+
+main .h3info-data .h3card {
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+main .h3card .h3head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main .h3card .h3head h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+main .h3card .h3head p {
+    font-weight: 14px;
+}
+
+main .h3card .h3head .h3icon {
+    font-size: 20px;
+    color: var(--green);
+}
+
+main .h3card .h3head .h3icon.down {
+    color: var(--red);
+}
+
+main .h3card .h3progress {
+    display: block;
+    margin-top: 24px;
+    height: 10px;   
+    width: 100%;
+    border-radius: 10px;
+    background: var(--grey);
+    overflow-y: hidden;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+main .h3card .h3progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--dark-blue);
+    width: var(--value);
+}
+
+main .h3card .label {
+    font-size: 14px;
+    font-weight: 700;
+
+}
 /* Main */
 /* Content */
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    #h3content {
+        position: relative;
+        width: calc(100% - 60px);
+        transition: all 0.3s ease;
+    }
+    nav .h3nav-divider,
+    nav .h3nav-link {
+        display: none;
+    }
+    
+}
