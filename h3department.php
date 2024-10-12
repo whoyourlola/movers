@@ -35,8 +35,8 @@ $res=mysqli_query($con,"select * from department order by id desc");
                                     <tr>
                                        <th width="5%">S.No</th>
                                        <th width="5%">ID</th>
-                                       <th width="70%">Department Name</th>
-                                       <th width="20%"></th>
+                                       <th width="80%">Department Name</th>
+                                       <th width="10%"></th>
                                     </tr>
                                  </thead>
                                  <tbody>
