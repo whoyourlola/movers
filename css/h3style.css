@@ -346,17 +346,20 @@ nav .h3profile .h3profile-link a:hover {
 main {
     width: 100%;
     padding: 24px 20px 20px 20px;
+    margin: 0 auto;
 }
 
 main .h3title {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 main .h3breadcrumbs {
     display: flex;
     grid-gap: 6px;
+    margin-bottom: 20px;
 }
 
 main .h3breadcrumbs li,
