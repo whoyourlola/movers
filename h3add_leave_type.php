@@ -33,10 +33,7 @@ if(isset($_POST['leave_type'])){
             <li><a href="#" class="h3active">Add Leave Type</a></li>
         </ul>
 
-        <div class="content">
-            <div class="animated fadeIn">
-               <div class="row">
-                  <div class="col-lg-12">
+        
                      <div class="card">
                         <div class="card-header"></div>
                         <div class="card-body card-block">
@@ -51,10 +48,7 @@ if(isset($_POST['leave_type'])){
 							  </form>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+                  
     </main>
 <!--Main-->
 

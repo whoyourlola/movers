@@ -27,17 +27,14 @@ if(isset($_POST['department'])){
 
 <!--Main-->
     <main>
-        
+	    <ul class="h3breadcrumbs">
             <li><a href="h3dashboard.php">Home</a></li>
             <li class="h3divider">/</a></li>
             <li><a href="h3add_department.php" class="h3active">Add Department</a></li>
 
         </ul>
 
-        <div class="content">
-            <div class="animated fadeIn">
-               <div class="row">
-                  <div class="col-lg-12">
+        
                      <div class="card">
                         <div class="card-header"><strong>Department</strong><small> Form</small></div>
                         <div class="card-body card-block">
@@ -52,10 +49,7 @@ if(isset($_POST['department'])){
 							  </form>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-        </div>
+                  
     </main>
 <!--Main-->
 

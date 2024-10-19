@@ -19,14 +19,11 @@ $res=mysqli_query($con,"select * from department order by id desc");
             <li><a href="h3department.php" class="h3active">Department Admin</a></li>
         </ul>
         
-        <div class="content">
-            <div class="orders">
-               <div class="row">
-                  <div class="col-xl-12">
+        
                      <div class="card">
                         <div class="card-body">
                            <h4 class="box-title">Department Admin </h4>
-						   <h4 class="box_title_link"><a href="add_department.php">Add Department</a> </h4>
+						         <h4 class="box_title_link"><a href="h3add_department.php">Add Department</a> </h4>
                         </div>
                         <div class="card-body--">
                            <div class="table-stats order-table ov-h">
@@ -47,7 +44,7 @@ $res=mysqli_query($con,"select * from department order by id desc");
                                        <td><?php echo $i?></td>
 									   <td><?php echo $row['id']?></td>
                                        <td><?php echo $row['department']?></td>
-									   <td><a href="h3add_department.php?id=<?php echo $row['id']?>">Edit</a> <a href="index.php?id=<?php echo $row['id']?>&type=delete">Delete</a></td>
+									   <td><a href="h3add_department.php?id=<?php echo $row['id']?>">Edit</a> <a href="h3department.php?id=<?php echo $row['id']?>&type=delete">Delete</a></td>
                                     </tr>
 									<?php 
 									$i++;
@@ -57,10 +54,7 @@ $res=mysqli_query($con,"select * from department order by id desc");
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-		  </div>
+                  
         
 
     </main>

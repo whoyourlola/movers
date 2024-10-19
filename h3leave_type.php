@@ -20,14 +20,11 @@ $res=mysqli_query($con,"select * from leave_type order by id desc");
             <li><a href="#" class="h3active">Leave Type</a></li>
         </ul>
 
-        <div class="content">
-            <div class="orders">
-               <div class="row">
-                  <div class="col-xl-12">
+        
                      <div class="card">
                         <div class="card-body">
                            <h4 class="box-title">Leave Type Master </h4>
-						   <h4 class="box_title_link"><a href="h3add_leave_type.php">Add Leave Type</a> </h4>
+						         <h4 class="box_title_link"><a href="h3add_leave_type.php">Add Leave Type</a> </h4>
                         </div>
                         <div class="card-body--">
                            <div class="table-stats order-table ov-h">
@@ -58,10 +55,7 @@ $res=mysqli_query($con,"select * from leave_type order by id desc");
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-		  </div>
+                  
          
     </main>
 <!--Main-->

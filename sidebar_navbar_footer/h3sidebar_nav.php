@@ -15,6 +15,7 @@ if(!isset($_SESSION['ROLE'])){
     <link rel="stylesheet" href="css/h3style.css">
     <link rel="stylesheet" href="css/h3health.css">
     <link rel="stylesheet" href="css/h3tablesformsdesign.css">
+    <link rel="stylesheet" href="css/h3attenddesign.css">
     <title>Dashboard</title>
 </head>
 <body>
@@ -36,6 +37,7 @@ if(!isset($_SESSION['ROLE'])){
                 <li>
                     <a href="#"><i class='bx bxs-user-check h3icon'></i> Manage Employee<i class='bx bx-chevron-right h3icon-right' ></i></a>
                     <ul class="h3side-dropdown">
+                        <li><a href="h3employee.php">Employees</a></li>
                         <li><a href="h3add_employee.php">Add Employee</a></li>
                     </ul>
                 </li>
@@ -45,8 +47,8 @@ if(!isset($_SESSION['ROLE'])){
                 <li>
                     <a href="#"><i class='bx bxs-calendar h3icon'></i> Attendance <i class='bx bx-chevron-right h3icon-right' ></i></a>
                     <ul class="h3side-dropdown">
-                        <li><a href="h3time.php">Time IN/OUT</a></li>
-                        <li><a href="h3timesheet.php">Timesheet</a></li>
+                        <li><a href="h3time.php?id=<?php echo $_SESSION['USER_ID']?>">Time IN/OUT</a></li>
+                        <li><a href="h3timesheet.php?id=<?php echo $_SESSION['USER_ID']?>">Timesheet</a></li>
                         <li><a href="h3leave.php">Leave Request</a></li>
                     </ul>
                 </li> 
@@ -91,7 +93,7 @@ if(!isset($_SESSION['ROLE'])){
             <div class="h3profile">
                 <img src="images/default profile pic.jpg" alt="">
                 <ul class="h3profile-link">
-                    <li><a href="h3add_employee.php"><i class='bx bx-user-circle Profile h3profile-icon'> Profile</i></a></li>
+                
                     <li><a href="h3settings.php"><i class='bx bxs-cog h3profile-icon' > Settings</i></a></li>
                     <li><a href="h3logout.php"><i class='bx bx-log-out h3profile-icon' > Logout</i></a></li>
                 </ul>

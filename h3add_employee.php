@@ -42,20 +42,15 @@ if(isset($_POST['submit'])){
 
 <!--Main-->
     <main>
-        
-        <ul class="h3breadcrumbs">
-            <li><a href="h3dashboard.php">Home</a></li>
-            <li class="h3divider">/</a></li>
-            <li><a href="#" class="h3active">Profile</a></li>
+              
+					 <?php if($_SESSION['ROLE']==1){?>
+						<ul class="h3breadcrumbs">
+            				<li><a href="h3dashboard.php">Home</a></li>
+            				<li class="h3divider">/</a></li>
+            				<li><a href="#" class="h3active">Add Employee</a></li>
 
-        </ul>
-
-		<div class="content">
-            <div class="animated fadeIn">
-               <div class="row">
-                  <div class="col-lg-12">
-                     <div class="card">
-                        <div class="card-header">Edit Profile</div>
+        				</ul>
+                        <div class="card-header">Add Employee</div>
                         <div class="card-body card-block">
                            <form method="post">
 							   <div class="form-group">
@@ -98,18 +93,72 @@ if(isset($_POST['submit'])){
 									<label class=" form-control-label">Birthday</label>
 									<input type="date" value="<?php echo $birthday?>" name="birthday" placeholder="Enter employee birthday" class="form-control" required>
 								</div>
-							   <?php if($_SESSION['ROLE']>0){?>
+							   
 							   <button  type="submit" name="submit" class="btn btn-lg btn-info btn-block">
 							   <span id="payment-button-amount">Submit</span>
 							   </button>
-							   <?php } ?>
-							  </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+							   
+
+							   <?php } else { ?>
+							<ul class="h3breadcrumbs">
+            					<li><a href="h3dashboard.php">Home</a></li>
+            					<li class="h3divider">/</a></li>
+            					<li><a href="#" class="h3active">My Profile</a></li>
+
+        					</ul>
+								<div class="card-header">Edit Profile</div>
+							<div class="card-body card-block">
+							<form method="post">
+								<div class="form-group">
+										<label class=" form-control-label">Name</label>
+										<input type="text" value="<?php echo $name?>" name="name" placeholder="Enter employee name" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<label class=" form-control-label">Email</label>
+										<input type="email" value="<?php echo $email?>" name="email" placeholder="Enter employee email" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<label class=" form-control-label">Mobile</label>
+										<input type="text" value="<?php echo $mobile?>" name="mobile" placeholder="Enter employee mobile" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<label class=" form-control-label">Password</label>
+										<input type="password"  name="password" placeholder="Enter employee password" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<label class=" form-control-label">Department</label>
+										<select name="department_id" required class="form-control">
+											<option value="">Select Department</option>
+											<?php
+											$res=mysqli_query($con,"select * from department order by department desc");
+											while($row=mysqli_fetch_assoc($res)){
+												if($department_id==$row['id']){
+													echo "<option selected='selected' value=".$row['id'].">".$row['department']."</option>";
+												}else{
+													echo "<option value=".$row['id'].">".$row['department']."</option>";
+												}
+											}
+											?>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class=" form-control-label">Address</label>
+										<input type="text" value="<?php echo $address?>" name="address" placeholder="Enter employee address" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<label class=" form-control-label">Birthday</label>
+										<input type="date" value="<?php echo $birthday?>" name="birthday" placeholder="Enter employee birthday" class="form-control" required>
+									</div>
+								
+								<button  type="submit" name="submit" class="btn btn-lg btn-info btn-block">
+								<span id="payment-button-amount">Submit</span>
+								</button>
+								<?php } ?>
+								</form>
+							</div>
+						</div>
+				
+                  
     </main>
 <!--Main-->
 

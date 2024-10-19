@@ -9,7 +9,7 @@ h4 {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    overflow: auto;
+    overflow-x: auto;
     width: 100%;
     height: 100vh;
 }
@@ -63,6 +63,7 @@ h4 {
 .table th, .table td {
     padding: 12px 15px;
     border: 1px solid #e3e6f0;
+    max-width: auto;
 }
 
 .table th {
@@ -156,17 +157,3 @@ button:hover {
 }
 
 
-@media (max-width: 768px) {
-    .table th, .table td {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-    .card-body {
-        padding: 15px;
-    }
-
-    .box-title, .box_title_link a {
-        font-size: 16px;
-    }
-}

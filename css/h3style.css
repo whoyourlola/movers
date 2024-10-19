@@ -32,6 +32,8 @@ html {
 
 body {
     background: var(--light-grey);
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -356,25 +358,29 @@ main .h3title {
     display: inline-block;
 }
 
-main .h3breadcrumbs {
-    display: flex;
-    grid-gap: 6px;
-    margin-bottom: 20px;
-}
-
-main .h3breadcrumbs li,
-main .h3breadcrumbs li a {
+.h3breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
     font-size: 14px;
 }
 
-main .h3breadcrumbs li a {
-    color: var(--blue);
+.h3breadcrumbs li {
+    display: inline;
 }
 
-main .h3breadcrumbs li a.h3active,
-main .h3breadcrumbs li a.h3divider {
-    color: var(--grey);
-    pointer-events: none;
+.h3breadcrumbs a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.h3breadcrumbs .h3divider {
+    margin: 0 5px;
+    color: #6c757d;
+}
+
+.h3breadcrumbs .h3active {
+    font-weight: bold;
 }
 
 /*--- Start ---*/

@@ -25,10 +25,7 @@ if(isset($_POST['submit'])){
             <li><a href="h3add_leave.php" class="h3active">Add Leave</a></li>
         </ul>
 
-        <div class="content">
-            <div class="animated fadeIn">
-               <div class="row">
-                  <div class="col-lg-12">
+        
                      <div class="card">
                         <div class="card-header"></div>
                         <div class="card-body card-block">
@@ -65,10 +62,7 @@ if(isset($_POST['submit'])){
 							  </form>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+                  
                   
     </main>
 <!--Main-->

@@ -28,10 +28,7 @@ $res=mysqli_query($con,$sql);
             <li><a href="#" class="h3active">Leave Request</a></li>
         </ul>
 
-        <div class="content">
-            <div class="orders">
-               <div class="row">
-                  <div class="col-xl-12">
+        
                      <div class="card">
                         <div class="card-body">
                            <h4 class="box-title">Leave Requests </h4>
@@ -102,10 +99,7 @@ $res=mysqli_query($con,$sql);
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-		  </div>
+                 
          <script>
 		 function update_leave_status(id,select_value){
 			window.location.href='h3leave.php?id='+id+'&type=update&status='+select_value;
