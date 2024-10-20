@@ -7,6 +7,7 @@ $department_id='';
 $address='';
 $birthday='';
 $id='';
+$e_attendance_id='';
 
 if(isset($_GET['id'])){
 	$id=mysqli_real_escape_string($con,$_GET['id']);
@@ -21,16 +22,23 @@ if(isset($_GET['id'])){
 	$department_id=$row['department_id'];
 	$address=$row['address'];
 	$birthday=$row['birthday'];
-
 }
-if(isset($_POST['submit'])){
-	$name=mysqli_real_escape_string($con,$_POST['name']);
-	$email=mysqli_real_escape_string($con,$_POST['email']);
-	$mobile=mysqli_real_escape_string($con,$_POST['mobile']);
-	$password=mysqli_real_escape_string($con,$_POST['password']);
-	$department_id=mysqli_real_escape_string($con,$_POST['department_id']);
-	$address=mysqli_real_escape_string($con,$_POST['address']);
-	$birthday=mysqli_real_escape_string($con,$_POST['birthday']);
+
+if(isset($_POST['timeIN'])){
+	$time_in=mysqli_real_escape_string($con,$_POST['time_in']);
+	$time_out=mysqli_real_escape_string($con,$_POST['time_out']);
+	$e_attendance_id=$_SESSION['USER_ID'];
+	$sql="insert into `attendance`(e_attendance_id,time_in) values('$e_attendance_id', NOW())";
+	mysqli_query($con,$sql);
+	header('location:h3dashboard.php?id='.$_SESSION['USER_ID']);
+	die();
+}
+
+
+
+/*if(isset($_POST['submit'])){
+
+	$time_in=mysqli_real_escape_string($con,$_POST['birthday']);
 	if($id>0){
 		$sql="update employee set name='$name',email='$email',mobile='$mobile',password='$password',department_id='$department_id',address='$address',birthday='$birthday' where id='$id'";
 	}else{
@@ -39,7 +47,7 @@ if(isset($_POST['submit'])){
 	mysqli_query($con,$sql);
 	header('location:h3time.php');
 	die();
-}
+}*/
 ?>
 
         <!--Main-->
@@ -106,11 +114,11 @@ if(isset($_POST['submit'])){
 						<div class="digital-clock" id="digital-clock">00:00:00</div>
 						<div class="date" id="date">January 1, 1970</div>
 
-						
-						<button type="Time IN" class="timebtn">Time IN</button>
-						<button type="Time OUT" class="timebtn">Time OUT</button>
+					<form method="POST">	
+						<button type="submit" name="timeIN" class="timebtn">Time IN</button>
+						<button type="submit" name="timeOUT" class="timebtn">Time OUT</button>
 					</div>
-							
+					</form>		
 							   
 
 
@@ -119,39 +127,33 @@ if(isset($_POST['submit'])){
 						<div class="card2">
 							<div class="card-body2">
 							<h4 class="box-title2">Time In/OUT </h4>
-								<?php if($_SESSION['ROLE']==2){ ?>
-							
-							<?php } ?>
 							</div>
 							<div class="card-body-2">
 							<div class="table-stats order-table ov-h">
 								<table class="table2 ">
 									<thead>
 										<tr>
-										<th >S.No</th>
-										<th >ID</th>
-										<th >Employee Name</th>
-										<th >Time IN</th>
-										<th >Time OUT</th>
-										<th ></th>
+		
+										<th width="50%">Name</th>
+										<th width="25%">Time IN</th>
+										<th width="25%">Time OUT</th>
 										</tr>
 									</thead>
 									<tbody>
-										<?php 
-										$i=1;
-										while($row=mysqli_fetch_assoc($res)){?>
+									<?php 
+									$i=1;
+									while($row=mysqli_fetch_assoc($res)){?>
 										<tr>
 										<td><?php echo $i?></td>
-										<td><?php echo $row['id']?></td>
-										<td><?php echo $row['name'].' ('.$row['eid'].')'?></td>
-										<!--<td><?php echo $row['leave_from']?></td>
-										<td><?php echo $row['leave_to']?></td>
-										<td><?php echo $row['leave_description']?></td>-->
+									   
+									   <td><?php echo $row['name'].' ('.$row['eaid'].')'?></td>
+                                       <td><?php echo $row['time_in']?></td>
+									   <td><?php echo $row['time_out']?></td>
+									
 
-										</tr>
-										<?php 
-										$i++;
-										} ?>
+									<?php 
+									$i++;
+									} ?>
 									</tbody>
 								</table>
 							</div>

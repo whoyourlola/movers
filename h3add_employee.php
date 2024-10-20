@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
 	mysqli_query($con,$sql);
 	header('location:h3employee.php');
 	die();
-}
+}//ssssss
 ?>
 
 <!--Main-->

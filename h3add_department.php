@@ -20,7 +20,7 @@ if(isset($_POST['department'])){
 		$sql="insert into department(department) values('$department')";
 	}
 	mysqli_query($con,$sql);
-	header('location:h3dashboard.php');
+	header('location:h3department.php');
 	die();
 }
 ?>

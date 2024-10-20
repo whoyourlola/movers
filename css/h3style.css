@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    background: var(--light-grey);
+    background: lightblue;
     margin: 0;
     padding: 0;
 }
@@ -52,7 +52,7 @@ li {
     position: fixed;
     max-width: 260px;
     width: 100%;
-    background: var(--light-blue);
+    background: var(--white);
     top: 0;
     left: 0;
     height: 100%;
@@ -74,22 +74,6 @@ li {
     display: none;
 }
 
-/*#sidebar .brand {
-	font-size: 24px;
-	display: flex;
-	align-items: center;
-	height: 64px;
-	font-weight: 700;
-	color: var(--blue);
-	position: sticky;
-	top: 0;
-	left: 0;
-	z-index: 100;
-	background: var(--light);
-	transition: all .3s ease;
-	padding: 0 6px;
-}*/
-
 #h3sidebar .h3logo {
     font-size: 24px;
     display: flex;
@@ -105,7 +89,7 @@ li {
 	left: 0;
     transition: all .3s ease;
     padding: 20px 0 0 0;
-    background: var(--light-blue);
+    background: var(--white);
 }
 
 #h3sidebar .h3icon {
@@ -140,17 +124,18 @@ li {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: var(--black);
+    color: var(--blue);
     padding: 12px 16px 12px 0;
     transition: all 0.3s ease;
     border-radius: 10px;
     margin: 4px 0;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
 }
 
 #h3sidebar .h3side-menu > li > a:hover {
-    background: var(--light-grey);
+    background: var(--light-blue);
+    color: white;
 }
 #h3sidebar .h3side-menu > li > a.h3side-active .h3icon-right{
     transform: rotateZ(90deg);
@@ -159,8 +144,8 @@ li {
 
 #h3sidebar .h3side-menu > li > a.h3side-active,
 #h3sidebar .h3side-menu > li > a.h3side-active:hover{
-    background: var(--light-grey);
-    color: var(--black);
+    background: var(--light-blue);
+    color: white;
 }
 
 #h3sidebar.hide:hover .h3side-divider {
@@ -193,7 +178,7 @@ li {
 }
 
 #h3sidebar .h3side-dropdown a:hover {
-    color: var(--light-grey);
+    color: var(--black);
 }
 
 
@@ -214,7 +199,7 @@ li {
 
 /* NavBar */
 nav {
-    background: var(--light-blue);
+    background: var(--white);
     height: 64px;
     padding: 0 20px;
     display: flex;
@@ -250,10 +235,11 @@ nav .h3form-group input {
     padding: 10px 36px 10px 16px;
     background: var(--white);
     transition: all .3s ease;
+    box-shadow: 0 0 0 1px var(--light-grey), 0 0 0 4px var(--grey);
 }
 
 nav .h3form-group input:focus {
-    box-shadow: 0 0 0 1px var(--light-grey), 0 0 0 4px var(--grey);
+    box-shadow: 0 0 0 4px var(--light-blue);
 }
 
 nav .h3form-group .h3nav-icon {
@@ -270,7 +256,7 @@ nav .h3nav-link {
 
 nav .h3nav-link .h3nav-icon {
     font-size: 18px;
-    color: var(--black);
+    color: var(--blue);
 }
 
 nav .h3nav-link .h3badge {
@@ -313,7 +299,7 @@ nav .h3profile .h3profile-link {
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-    background: var(--light-grey);
+    background: var(--white);
     padding: 10px 0;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -334,7 +320,7 @@ nav .h3profile .h3profile-link a {
     display: flex;
     grid-gap: 10px;
     font-size: 14px;
-    color: var(--black);
+    color: blue;
     align-items: center;
     transition: all .3s ease;
 }
