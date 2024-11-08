@@ -42,20 +42,6 @@ if($_SESSION['ROLE']==1){
 	$sql="select `attendance`.*, employee.name ,employee.id as e_attendance_id from `attendance`,employee where `attendance`.e_attendance_id='$e_attendance_id' and `attendance`.e_attendance_id=employee.id order by `attendance`.id desc";
 }
 $res2=mysqli_query($con,$sql);
-
-
-/*if(isset($_POST['submit'])){
-
-	$time_in=mysqli_real_escape_string($con,$_POST['birthday']);
-	if($id>0){
-		$sql="update employee set name='$name',email='$email',mobile='$mobile',password='$password',department_id='$department_id',address='$address',birthday='$birthday' where id='$id'";
-	}else{
-		$sql="insert into employee(name,email,mobile,password,department_id,address,birthday,role) values('$name','$email','$mobile','$password','$department_id','$address','$birthday','2')";
-	}
-	mysqli_query($con,$sql);
-	header('location:h3time.php');
-	die();
-}*/
 ?>
 
         <!--Main-->
