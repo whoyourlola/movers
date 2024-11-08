@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Oct 12, 2024 at 07:53 PM
+-- Generation Time: Nov 08, 2024 at 03:18 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `movers`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `id` int(11) NOT NULL,
+  `e_attendance_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time_in` time NOT NULL,
+  `time_out` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`id`, `e_attendance_id`, `date`, `time_in`, `time_out`) VALUES
+(19, 1, '2024-11-08', '18:17:08', '00:00:00'),
+(20, 1, '2024-11-08', '18:17:50', '00:00:00'),
+(21, 1, '2024-11-08', '18:51:20', '00:00:00'),
+(22, 1, '2024-11-08', '18:51:25', '00:00:00'),
+(23, 1, '2024-11-08', '18:51:26', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -64,8 +89,10 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `name`, `email`, `mobile`, `password`, `department_id`, `address`, `birthday`, `role`) VALUES
-(1, 'Patrick Joseph Puzon', 'patrick@gmail.com', '09555555555', '123', 1, '78 Street Barangay City', '2001-10-28', 2),
-(2, 'admin', 'admin@gmail.com', '0961616161', 'admin', 0, '16 Street Barangay City', '2024-10-02', 1);
+(1, 'Patrick Joseph Puzon', 'patrick@gmail.com', '09555555555', '123', 1, '78 Barzalona Street Walayan, Bangkok novaliches City', '2001-10-28', 2),
+(2, 'admin', 'admin@gmail.com', '0961616161', 'admin', 0, '16 Street Barangay City', '2024-10-02', 1),
+(4, 'alkgfjakgkagagasgasg', 'test@gmail.com', 'asgarsgaf', '123', 1, 'awfsawda', '2024-10-25', 2),
+(5, '456', '456@gmail.com', '456', '456', 1, '456', '0006-04-05', 2);
 
 -- --------------------------------------------------------
 
@@ -89,8 +116,10 @@ CREATE TABLE `leave` (
 
 INSERT INTO `leave` (`id`, `employee_id`, `leave_id`, `leave_from`, `leave_to`, `leave_description`, `leave_status`) VALUES
 (1, 1, 6, '2024-10-10', '2024-10-12', 'Vacation', 3),
-(4, 1, 14, '2024-10-02', '2024-10-12', '111111111111111111111111111111111111111awjfakljflkajfgajklgagklawjklgjwaglkwalgkjwagjwlajglwelgjwlgwkeagkwekgjwajglkwjglkjklajgklajklrjgkajkgjklajlkgag', 1),
-(5, 1, 14, '2024-03-08', '2024-10-25', 'dwadswa 12 123 123123 123 12 31 23123 123 123 1 51 31 32123 11  23 ', 1);
+(5, 1, 14, '2024-03-08', '2024-10-25', 'dwadswa 12 123 123123 123 12 31 23123 123 123 1 51 31 32123 11  23 ', 1),
+(7, 1, 14, '2024-10-02', '2024-10-30', 'waDASFAWFA', 2),
+(8, 5, 14, '2024-10-05', '2024-10-18', '', 2),
+(9, 1, 13, '2024-10-03', '2024-10-26', '123213213123123123231231', 1);
 
 -- --------------------------------------------------------
 
@@ -138,6 +167,12 @@ INSERT INTO `leave_type` (`id`, `leave_type`) VALUES
 --
 
 --
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `department`
 --
 ALTER TABLE `department`
@@ -166,28 +201,34 @@ ALTER TABLE `leave_type`
 --
 
 --
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `leave`
 --
 ALTER TABLE `leave`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `leave_type`
 --
 ALTER TABLE `leave_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
