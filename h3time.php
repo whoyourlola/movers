@@ -34,6 +34,14 @@ if(isset($_POST['timeIN'])){
 	die();
 }
 
+if($_SESSION['ROLE']==1){ 
+	$sql="select `attendance`.*, employee.name,employee.id as e_attendance_id from `attendance`,employee where `attendance`.e_attendance_id=employee.id order by `attendance`.id desc";
+	
+}else{
+	$e_attendance_id=$_SESSION['USER_ID'];
+	$sql="select `attendance`.*, employee.name ,employee.id as e_attendance_id from `attendance`,employee where `attendance`.e_attendance_id='$e_attendance_id' and `attendance`.e_attendance_id=employee.id order by `attendance`.id desc";
+}
+$res2=mysqli_query($con,$sql);
 
 
 /*if(isset($_POST['submit'])){
@@ -143,12 +151,10 @@ if(isset($_POST['timeIN'])){
 									<tbody>
 									<?php 
 									$i=1;
-									while($row=mysqli_fetch_assoc($res)){?>
+									while($row=mysqli_fetch_assoc($res2)){?>
 										<tr>
-										<td><?php echo $i?></td>
-									   
-									   <td><?php echo $row['name'].' ('.$row['eaid'].')'?></td>
-									   <td><?php echo $row['date']?></td>
+									   <td><?php echo $row['name'].' ('.$row['e_attendance_id'].')'?></td>
+									   <td><?php echo $row['time_in']?></td>
                                        <td><?php echo $row['time_in']?></td>
 									   <td><?php echo $row['time_out']?></td>
 									

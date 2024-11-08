@@ -96,11 +96,7 @@
 }
 
 .timebtn:hover {
-    background-color: blue !important;
-}
-
-.timebtn:active {
-    transform: scale(0.98);
+    background-color: blue;
 }
 
 .time2-container {
