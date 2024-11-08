@@ -21,25 +21,16 @@ if(isset($_GET['id'])){
 	$department_id=$row['department_id'];
 	$address=$row['address'];
 	$birthday=$row['birthday'];
+}
 
+if($_SESSION['ROLE']==1){ 
+	$sql="select `attendance`.*, employee.name,employee.id as e_attendance_id from `attendance`,employee where `attendance`.e_attendance_id=employee.id order by `attendance`.id desc";
+	
+}else{
+	$e_attendance_id=$_SESSION['USER_ID'];
+	$sql="select `attendance`.*, employee.name ,employee.id as e_attendance_id from `attendance`,employee where `attendance`.e_attendance_id='$e_attendance_id' and `attendance`.e_attendance_id=employee.id order by `attendance`.id desc";
 }
-if(isset($_POST['submit'])){
-	$name=mysqli_real_escape_string($con,$_POST['name']);
-	$email=mysqli_real_escape_string($con,$_POST['email']);
-	$mobile=mysqli_real_escape_string($con,$_POST['mobile']);
-	$password=mysqli_real_escape_string($con,$_POST['password']);
-	$department_id=mysqli_real_escape_string($con,$_POST['department_id']);
-	$address=mysqli_real_escape_string($con,$_POST['address']);
-	$birthday=mysqli_real_escape_string($con,$_POST['birthday']);
-	if($id>0){
-		$sql="update employee set name='$name',email='$email',mobile='$mobile',password='$password',department_id='$department_id',address='$address',birthday='$birthday' where id='$id'";
-	}else{
-		$sql="insert into employee(name,email,mobile,password,department_id,address,birthday,role) values('$name','$email','$mobile','$password','$department_id','$address','$birthday','2')";
-	}
-	mysqli_query($con,$sql);
-	header('location:h3timesheet.php');
-	die();
-}
+$res2=mysqli_query($con,$sql);
 ?>
 
         <!--Main-->
@@ -112,6 +103,7 @@ if(isset($_POST['submit'])){
 										<th >S.No</th>
 										<th >ID</th>
 										<th >Employee Name</th>
+										<th >Date</th>
 										<th >Time IN</th>
 										<th >Time OUT</th>
 										<th ></th>
@@ -120,15 +112,14 @@ if(isset($_POST['submit'])){
 									<tbody>
 										<?php 
 										$i=1;
-										while($row=mysqli_fetch_assoc($res)){?>
+										while($row=mysqli_fetch_assoc($res2)){?>
 										<tr>
 										<td><?php echo $i?></td>
 										<td><?php echo $row['id']?></td>
-										<td><?php echo $row['name'].' ('.$row['eid'].')'?></td>
-										<!--<td><?php echo $row['leave_from']?></td>
-										<td><?php echo $row['leave_to']?></td>
-										<td><?php echo $row['leave_description']?></td>-->
-
+										<td><?php echo $row['name'].' ('.$row['e_attendance_id'].')'?></td>
+										<td><?php echo $row['date']?></td>
+                                      	<td><?php echo $row['time_in']?></td>
+									   	<td><?php echo $row['time_out']?></td>
 										</tr>
 										<?php 
 										$i++;

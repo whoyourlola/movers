@@ -127,11 +127,11 @@ $res2=mysqli_query($con,$sql);
 								<table class="table2 ">
 									<thead>
 										<tr>
-		
-										<th width="35%">Name</th>
-										<th width="15%">Date</th>
-										<th width="25%">Time IN</th>
-										<th width="25%">Time OUT</th>
+										<th >S.No</th>
+										<th>Name</th>
+										<th>Date</th>
+										<th>Time IN</th>
+										<th>Time OUT</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -139,6 +139,8 @@ $res2=mysqli_query($con,$sql);
 									$i=1;
 									while($row=mysqli_fetch_assoc($res2)){?>
 										<tr>
+
+									   <td><?php echo $i?></td>	
 									   <td><?php echo $row['name'].' ('.$row['e_attendance_id'].')'?></td>
 									   <td><?php echo $row['time_in']?></td>
                                        <td><?php echo $row['time_in']?></td>
