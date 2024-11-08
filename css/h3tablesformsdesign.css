@@ -139,7 +139,7 @@ select.form-control:focus {
 
 
 button {
-    background-color: #28a745;
+    background-color: blue;
     border: none;
     color: white;
     padding: 10px 15px;
@@ -150,10 +150,12 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+    font-weight: 700;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: darkblue !important;
+    font-weight: 700;
 }
 
 
