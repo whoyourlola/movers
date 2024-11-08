@@ -92,11 +92,11 @@
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .timebtn:hover {
-    background-color: #45a049;
+    background-color: blue !important;
 }
 
 .timebtn:active {

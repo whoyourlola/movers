@@ -21,7 +21,7 @@ if(!isset($_SESSION['ROLE'])){
 <body>
     <!-- Sidebar -->
     <section id="h3sidebar">
-         <a href="h3dashboard.php" class="h3logo"><img src="images/logo.png" alt class="h3logo-img"></a>
+         <a href="h3dashboard.php" class="h3logo"><img src="images/logo1.1.png" alt class="h3logo-img"></a>
         <ul class="h3side-menu">
             <?php if($_SESSION['ROLE']==1){ ?>
             <li><a href="h3department.php" class="h3side-active"><i class='bx bxs-buildings h3icon'></i> Department Admin</a></li>

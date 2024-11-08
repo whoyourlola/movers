@@ -31,9 +31,10 @@ if(isset($_POST['email']) && isset($_POST['password'])){
          
 <body>         
 	
+			
                <div class="form-container">
-
                   <form method="post">
+					<img src="images/logo1.1.png" alt="" class="login_img">
                     <h3>Login</h3>
 
                      

@@ -28,9 +28,9 @@ if(isset($_POST['timeIN'])){
 	$time_in=mysqli_real_escape_string($con,$_POST['time_in']);
 	$time_out=mysqli_real_escape_string($con,$_POST['time_out']);
 	$e_attendance_id=$_SESSION['USER_ID'];
-	$sql="insert into `attendance`(e_attendance_id,time_in) values('$e_attendance_id', NOW())";
+	$sql="insert into `attendance`(e_attendance_id, date, time_in) values('$e_attendance_id', NOW(), NOW())";
 	mysqli_query($con,$sql);
-	header('location:h3dashboard.php?id='.$_SESSION['USER_ID']);
+	header('location:h3time.php?id='.$_SESSION['USER_ID']);
 	die();
 }
 
@@ -134,7 +134,8 @@ if(isset($_POST['timeIN'])){
 									<thead>
 										<tr>
 		
-										<th width="50%">Name</th>
+										<th width="35%">Name</th>
+										<th width="15%">Date</th>
 										<th width="25%">Time IN</th>
 										<th width="25%">Time OUT</th>
 										</tr>
@@ -147,6 +148,7 @@ if(isset($_POST['timeIN'])){
 										<td><?php echo $i?></td>
 									   
 									   <td><?php echo $row['name'].' ('.$row['eaid'].')'?></td>
+									   <td><?php echo $row['date']?></td>
                                        <td><?php echo $row['time_in']?></td>
 									   <td><?php echo $row['time_out']?></td>
 									
