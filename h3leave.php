@@ -65,7 +65,7 @@ $res=mysqli_query($con,$sql);
 									   <td>
 										   <?php
 											if($row['leave_status']==1){
-												echo "Applied";
+												echo "Pending";
 											}if($row['leave_status']==2){
 												echo "Approved";
 											}if($row['leave_status']==3){
