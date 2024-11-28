@@ -47,10 +47,10 @@ if(isset($_POST['submit'])){
 						<ul class="h3breadcrumbs">
             				<li><a href="h3dashboard.php">Home</a></li>
             				<li class="h3divider">/</a></li>
-            				<li><a href="#" class="h3active">Add Employee</a></li>
+            				<li><a href="#" class="h3active">Add / Edit Employee</a></li>
 
         				</ul>
-                        <div class="card-header">Add Employee</div>
+                        <div class="card-header">Add / Edit Employee</div>
                         <div class="card-body card-block">
                            <form method="post">
 							   <div class="form-group">

@@ -33,8 +33,64 @@ if($_SESSION['ROLE']==1){
 $res2=mysqli_query($con,$sql);
 ?>
 
+	
         <!--Main-->
     <main>
+	<?php if($_SESSION['ROLE']==1){?>
+		<h1 class="h3title">Attendance Admin</h1>
+        <ul class="h3breadcrumbs">
+            <li><a href="h3dashboard.php">Home</a></li>
+            <li class="h3divider">/</a></li>
+            <li><a href="#" class="h3active">Attendance Admin</a></li>
+
+        </ul>
+
+                <div class="time2-container">					
+						<div class="card2">
+							<div class="card-body2">
+							<h4 class="box-title2">Employees Attendance </h4>
+								<?php if($_SESSION['ROLE']==2){ ?>
+							
+							<?php } ?>
+							</div>
+							<div class="card-body-2">
+							<div class="table-stats order-table ov-h">
+								<table class="table2 ">
+									<thead>
+										<tr>
+										<th >S.No</th>
+										<th >ID</th>
+										<th >Employee Name</th>
+										<th >Date</th>
+										<th >Time IN</th>
+										<th >Time OUT</th>
+										<th >Overtime</th>
+										<th ></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php 
+										$i=1;
+										while($row=mysqli_fetch_assoc($res2)){?>
+										<tr>
+										<td><?php echo $i?></td>
+										<td><?php echo $row['id']?></td>
+										<td><?php echo $row['name'].' ('.$row['e_attendance_id'].')'?></td>
+										<td><?php echo $row['date']?></td>
+                                      	<td><?php echo $row['time_in']?></td>
+									   	<td><?php echo $row['time_out']?></td>
+										<td><?php echo $row['Overtime']?></td>
+										</tr>
+										<?php 
+										$i++;
+										} ?>
+									</tbody>
+								</table>
+							</div>
+							</div>
+						</div>
+					</div>
+		<?php } else { ?>
         <h1 class="h3title">Timesheet</h1>
         <ul class="h3breadcrumbs">
             <li><a href="h3dashboard.php">Home</a></li>
@@ -53,36 +109,10 @@ $res2=mysqli_query($con,$sql);
 									<label class=" form-control-label1">Name: <span style="color:blue"><?php echo $name?></span></label>
 									
 								</div>
-								<div class="form-group1">
-									<label class=" form-control-label1">Email: <span style="color:blue"><?php echo $email?></span></label>
-								</div>
-								<div class="form-group1">
-									<label class=" form-control-label1">Mobile: <span style="color:blue"><?php echo $mobile?></span></label>
-								</div>
-								<div class="form-group1">
-									<label class=" form-control-label1">Department: <select name="department_id" required class="form-control-1">
-										<option value="">Select Department</option>
-										<?php
-										$res=mysqli_query($con,"select * from department order by department desc");
-										while($row=mysqli_fetch_assoc($res)){
-											if($department_id==$row['id']){
-												echo "<option selected='selected' value=".$row['id'].">".$row['department']."</option>";
-											}else{
-												echo "<option value=".$row['id'].">".$row['department']."</option>";
-											}
-										}
-										?>
-									</select></label>
-								</div>
-									
-								<div class="form-group1">
-									<label class=" form-control-label1">Address: <span style="color:blue"><?php echo $address?></span></label>
-								</div>
-								<div class="form-group1">
-									<label class=" form-control-label1">Birthday: <span style="color:blue"><?php echo $birthday?></span></label>
-								</div>
+								
+								
 
-							  </form>
+							</form>
                         </div>
 					</div>
 				</div>
@@ -106,6 +136,7 @@ $res2=mysqli_query($con,$sql);
 										<th >Date</th>
 										<th >Time IN</th>
 										<th >Time OUT</th>
+										<th >Overtime</th>
 										<th ></th>
 										</tr>
 									</thead>
@@ -120,6 +151,7 @@ $res2=mysqli_query($con,$sql);
 										<td><?php echo $row['date']?></td>
                                       	<td><?php echo $row['time_in']?></td>
 									   	<td><?php echo $row['time_out']?></td>
+										<td><?php echo $row['Overtime']?></td>
 										</tr>
 										<?php 
 										$i++;
@@ -130,7 +162,7 @@ $res2=mysqli_query($con,$sql);
 							</div>
 						</div>
 					</div>
-
+					<?php } ?>					
 
     </main>
         <!--Main-->

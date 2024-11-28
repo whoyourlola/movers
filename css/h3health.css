@@ -1,65 +1,25 @@
 main .h3info-data {
     margin-top: 36px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 20px;
 }
 
 main .h3info-data .h3card {
-    padding: 20px;
+    padding: 30px 10px 20px 10px ;
     border-radius: 10px;
     background: var(--white);
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
+    height: 150px;
+    transition: all 1s ease;
+    text-align: center;
 }
 
-main .h3card .h3head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-main .h3card .h3head h2 {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-main .h3card .h3head p {
-    font-weight: 14px;
-}
-
-main .h3card .h3head .h3icon {
-    font-size: 20px;
-    color: var(--green);
-}
-
-main .h3card .h3head .h3icon.down {
-    color: var(--red);
-}
-
-main .h3card .h3progress {
-    display: block;
-    margin-top: 24px;
-    height: 10px;   
-    width: 100%;
+main .h3info-data .h3card:hover {
+    padding: 30px 10px 20px 10px;
     border-radius: 10px;
-    background: var(--grey);
-    overflow-y: hidden;
-    position: relative;
-    margin-bottom: 5px;
-}
-
-main .h3card .h3progress::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: var(--dark-blue);
-    width: var(--value);
-}
-
-main .h3card .label {
-    font-size: 14px;
-    font-weight: 700;
+    background: rgb(168, 214, 233);
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 1);
+    height: 149px;
 
 }

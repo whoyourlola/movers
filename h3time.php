@@ -25,8 +25,7 @@ if(isset($_GET['id'])){
 }
 
 if(isset($_POST['timeIN'])){
-	$time_in=mysqli_real_escape_string($con,$_POST['time_in']);
-	$time_out=mysqli_real_escape_string($con,$_POST['time_out']);
+	
 	$e_attendance_id=$_SESSION['USER_ID'];
 	$sql="insert into `attendance`(e_attendance_id, date, time_in) values('$e_attendance_id', NOW(), NOW())";
 	mysqli_query($con,$sql);
@@ -111,9 +110,9 @@ $res2=mysqli_query($con,$sql);
 					<form method="POST">	
 						<button type="submit" name="timeIN" class="timebtn">Time IN</button>
 						<button type="submit" name="timeOUT" class="timebtn">Time OUT</button>
-					</div>
+					
 					</form>		
-							   
+					</div>   
 
 
                 <!-- Time IN/OUT TABLE-->
@@ -142,7 +141,7 @@ $res2=mysqli_query($con,$sql);
 
 									   <td><?php echo $i?></td>	
 									   <td><?php echo $row['name'].' ('.$row['e_attendance_id'].')'?></td>
-									   <td><?php echo $row['time_in']?></td>
+									   <td><?php echo $row['date']?></td>
                                        <td><?php echo $row['time_in']?></td>
 									   <td><?php echo $row['time_out']?></td>
 									

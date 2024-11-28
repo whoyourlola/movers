@@ -24,9 +24,11 @@ if(!isset($_SESSION['ROLE'])){
          <a href="h3dashboard.php" class="h3logo"><img src="images/logo1.1.png" alt class="h3logo-img"></a>
         <ul class="h3side-menu">
             <?php if($_SESSION['ROLE']==1){ ?>
-            <li><a href="h3department.php" class="h3side-active"><i class='bx bxs-buildings h3icon'></i> Department Admin</a></li>
+                <li><a href="h3dashboard.php" class="h3side-active"><i class='bx bxs-dashboard h3icon'></i> Dashboard</a></li>
+                <li class="h3side-divider">Main</li>
+            <li><a href="h3department.php" class="h3side"><i class='bx bxs-buildings h3icon'></i> Department Admin</a></li>
              
-            
+            <li><a href="h3timesheet.php" class="h3side"><i class='bx bx-buildings h3icon'></i> Attendance Admin</a></li>
                 <li>
                     <a href="#"><i class='bx bx-log-out-circle h3icon'></i> Leave Admin<i class='bx bx-chevron-right h3icon-right' ></i></a>
                     <ul class="h3side-dropdown">
@@ -49,10 +51,18 @@ if(!isset($_SESSION['ROLE'])){
                     <ul class="h3side-dropdown">
                         <li><a href="h3time.php?id=<?php echo $_SESSION['USER_ID']?>">Time IN/OUT</a></li>
                         <li><a href="h3timesheet.php?id=<?php echo $_SESSION['USER_ID']?>">Timesheet</a></li>
-                        <li><a href="h3leave.php">Leave Request</a></li>
+                       
                     </ul>
                 </li> 
-                <li><a href="h3healthAndSafety.php"><i class='bx bxs-shield h3icon' ></i> Health and Safety</a></li>
+                <li><a href="h3leave.php" class="h3side"><i class='bx bx-buildings h3icon'></i>Leave Request</a></li>
+                <li>
+                    <a href="#"><i class='bx bxs-shield h3icon' ></i> Health and Safety <i class='bx bx-chevron-right h3icon-right' ></i></a>
+                    <ul class="h3side-dropdown">
+                        
+                        <li><a href="h3safety.php">Safety Protocols</a></li>
+                        <li><a href="h3medical.php">Medical Submission</a></li>
+                    </ul>
+                </li> 
                 <li class="h3side-divider">OTHER</li>
             <li> 
                 <a href="#"><i class='bx bx-signal-5 h3icon'></i> Other Services <i class='bx bx-chevron-right h3icon-right' ></i></a>
@@ -85,10 +95,7 @@ if(!isset($_SESSION['ROLE'])){
                 <i class='bx bxs-bell h3nav-icon' ></i>
                 <span class="h3badge">0</span>
             </a>
-            <a href="#" class="h3nav-link">
-                <i class='bx bxs-message-square-dots h3nav-icon' ></i>
-                <span class="h3badge">0</span>
-            </a>
+            
             <span class="h3nav-divider"></span>
             <div class="h3profile">
                 <img src="images/default profile pic.jpg" alt="">
@@ -105,10 +112,7 @@ if(!isset($_SESSION['ROLE'])){
                 <i class='bx bxs-bell h3nav-icon' ></i>
                 <span class="h3badge">0</span>
             </a>
-            <a href="#" class="h3nav-link">
-                <i class='bx bxs-message-square-dots h3nav-icon' ></i>
-                <span class="h3badge">0</span>
-            </a>
+            
             <span class="h3nav-divider"></span>
             <div class="h3profile">
                 <img src="images/default profile pic.jpg" alt="">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3307
--- Generation Time: Nov 08, 2024 at 03:18 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 26, 2024 at 05:52 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,19 +32,23 @@ CREATE TABLE `attendance` (
   `e_attendance_id` int(11) NOT NULL,
   `date` date NOT NULL,
   `time_in` time NOT NULL,
-  `time_out` time NOT NULL
+  `time_out` time NOT NULL,
+  `Overtime` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `attendance`
 --
 
-INSERT INTO `attendance` (`id`, `e_attendance_id`, `date`, `time_in`, `time_out`) VALUES
-(19, 1, '2024-11-08', '18:17:08', '00:00:00'),
-(20, 1, '2024-11-08', '18:17:50', '00:00:00'),
-(21, 1, '2024-11-08', '18:51:20', '00:00:00'),
-(22, 1, '2024-11-08', '18:51:25', '00:00:00'),
-(23, 1, '2024-11-08', '18:51:26', '00:00:00');
+INSERT INTO `attendance` (`id`, `e_attendance_id`, `date`, `time_in`, `time_out`, `Overtime`) VALUES
+(19, 1, '2024-11-08', '18:17:08', '00:00:00', '00:00:00'),
+(20, 1, '2024-11-08', '18:17:50', '00:00:00', '00:00:00'),
+(21, 1, '2024-11-08', '18:51:20', '00:00:00', '00:00:00'),
+(22, 1, '2024-11-08', '18:51:25', '00:00:00', '00:00:00'),
+(23, 1, '2024-11-08', '18:51:26', '00:00:00', '00:00:00'),
+(24, 1, '2024-11-27', '00:11:37', '00:00:00', '00:00:00'),
+(25, 5, '2024-11-27', '00:36:17', '00:00:00', '00:00:00'),
+(26, 5, '2024-11-27', '00:36:19', '00:00:00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -204,7 +208,7 @@ ALTER TABLE `leave_type`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `department`
