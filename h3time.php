@@ -142,7 +142,7 @@ $res2=mysqli_query($con,$sql);
 
 									   <td><?php echo $i?></td>	
 									   <td><?php echo $row['name'].' ('.$row['e_attendance_id'].')'?></td>
-									   <td><?php echo $row['time_in']?></td>
+									   <td><?php echo $row['date']?></td>
                                        <td><?php echo $row['time_in']?></td>
 									   <td><?php echo $row['time_out']?></td>
 									
