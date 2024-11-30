@@ -29,7 +29,7 @@ require('sidebar_navbar_footer/h3sidebar_nav.php');
             <div class="h3card">
                 
                     
-                        <h2><a href="h3healthandsafety.php?id=<?php echo $_SESSION['USER_ID']?>" class="h3active">Safety Protocols</a></h2>
+                        <h2><a href="h3safety.php?id=<?php echo $_SESSION['USER_ID']?>" class="h3active">Safety Protocols</a></h2>
             </div>
 
 

@@ -7,7 +7,7 @@ require('sidebar_navbar_footer/h3sidebar_nav.php');
         <ul class="h3breadcrumbs">
             <li><a href="h3dashboard.php">Home</a></li>
             <li class="h3divider">/</a></li>
-            <li><a href="safety.php" class="h3active">Safety Protocols</a></li>
+            <li><a href="h3safety.php" class="h3active">Safety Protocols</a></li>
         </ul>
 
         <img class="safetyimg" src="images/pic101.jpg" alt="" class="href">
