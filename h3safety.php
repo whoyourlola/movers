@@ -10,7 +10,7 @@ require('sidebar_navbar_footer/h3sidebar_nav.php');
             <li><a href="safety.php" class="h3active">Safety Protocols</a></li>
         </ul>
 
-        <img src="images/pic101.jpg" alt="" class="href">
+        <img class="safetyimg" src="images/pic101.jpg" alt="" class="href">
     </main>
         
 <?php

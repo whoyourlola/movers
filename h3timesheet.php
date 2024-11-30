@@ -80,6 +80,7 @@ $res2=mysqli_query($con,$sql);
                                       	<td><?php echo $row['time_in']?></td>
 									   	<td><?php echo $row['time_out']?></td>
 										<td><?php echo $row['Overtime']?></td>
+										<td><a href="h3time_edit.php?id=<?php echo $row['id']?>">Edit</a>
 										</tr>
 										<?php 
 										$i++;

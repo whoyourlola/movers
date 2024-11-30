@@ -32,18 +32,8 @@ require('sidebar_navbar_footer/h3sidebar_nav.php');
                         <h2><a href="h3healthandsafety.php?id=<?php echo $_SESSION['USER_ID']?>" class="h3active">Safety Protocols</a></h2>
             </div>
 
-            <div class="h3card">
-                
-                    
-                    <h2>
-						
-			
-						<div class="date" id="date">January 1, 1970</div>
 
-					
-					</h2>
-            </div>
-        </div>
+    </div>
         </main>
         <!--------Info Data---------->
         <?php } else { ?>
@@ -71,18 +61,7 @@ require('sidebar_navbar_footer/h3sidebar_nav.php');
 					</h2>
             </div>
 
-            <div class="h3card">
-                
-                    
-                    <h2>
-						
-			
-						<div class="date" id="date">January 1, 1970</div>
 
-					
-					</h2>
-            </div>
-         </div>
             
             <?php } ?>
       

@@ -36,7 +36,7 @@ if(isset($_POST['department'])){
 
         
                      <div class="card">
-                        <div class="card-header"><strong>Department</strong><small> Form</small></div>
+                        <div class="card-header"><strong>Add Department</strong></div>
                         <div class="card-body card-block">
                            <form method="post">
 							   <div class="form-group">

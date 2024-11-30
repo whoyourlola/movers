@@ -4,15 +4,22 @@ if($_SESSION['ROLE']!=1){
 	header('location:h3add_employee.php?id='.$_SESSION['USER_ID']);
 	die();
 }
-$leave_type='';
-$id='';
+
+$date='';
+$time_in='';
+$time_out='';
+$Overtime='';
+
 if(isset($_GET['id'])){
 	$id=mysqli_real_escape_string($con,$_GET['id']);
-	$res=mysqli_query($con,"select * from leave_type where id='$id'");
+	$res=mysqli_query($con,"select * from attendance where id='$id'");
 	$row=mysqli_fetch_assoc($res);
-	$leave_type=$row['leave_type'];
+	$timeIn=$row['time_in'];
+    $timeOUT=$row['time_out'];
+    $overTIME=$row['Overtime'];
 }
-if(isset($_POST['leave_type'])){
+
+if(isset($_POST['submit'])){
 	$leave_type=mysqli_real_escape_string($con,$_POST['leave_type']);
 	if($id>0){
 		$sql="update leave_type set leave_type='$leave_type' where id='$id'";
@@ -23,35 +30,40 @@ if(isset($_POST['leave_type'])){
 	header('location:h3leave_type.php');
 	die();
 }
+
 ?>
 
-<!--Main-->
+        <!--Main-->
     <main>
         <ul class="h3breadcrumbs">
             <li><a href="h3dashboard.php">Home</a></li>
             <li class="h3divider">/</a></li>
-            <li><a href="#" class="h3active">Add Leave Type</a></li>
+            <li><a href="h3settings.php" class="h3active">Edit Employees Timesheet</a></li>
         </ul>
 
-        
-                     <div class="card">
+        <div class="card">
 						
-                        <div class="card-header">Add Leave</div>
+                        <div class="card-header">Edit Employee Time</div>
                         <div class="card-body card-block">
                            <form method="post">
 							   <div class="form-group">
-								<label for="leave_type" class=" form-control-label">Leave Type</label>
-								<input type="text" value="<?php echo $leave_type?>" name="leave_type" placeholder="Enter your leave type" class="form-control" required></div>
+								<label for="leave_type" class=" form-control-label">Edit Time IN</label>
+								<input type="time" value="<?php echo $time_in?>" name="timeIN" placeholder="Edit time" class="form-control" required>
 							   
+                                <label for="leave_type" class=" form-control-label">Edit Time Out</label>
+								<input type="time" value="<?php echo $time_out?>" name="timeOUT" placeholder="Edit time" class="form-control" required>
+
+                                <label for="leave_type" class=" form-control-label">Edit Overtime</label>
+								<input type="time" value="<?php echo $Overtime?>" name="overTIME" placeholder="Edit time" class="form-control" required>
 							   <button  type="submit" class="btn btn-lg btn-info btn-block">
 							   <span id="payment-button-amount">Submit</span>
 							   </button>
 							  </form>
                         </div>
                      </div>
-                  
+
     </main>
-<!--Main-->
+        <!--Main-->
 
 <?php
 require('sidebar_navbar_footer/h3continuation.php');

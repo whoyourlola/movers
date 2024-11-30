@@ -11,7 +11,7 @@ require('sidebar_navbar_footer/h3sidebar_nav.php');
         </ul>
 
         <div class="card">
-                        <div class="card-header"><strong>Submit Files</strong></div>
+                        <div class="card-header"><strong>Submit Medical Files</strong></div>
                         <div class="card-body card-block">
                            <form method="post">
 							   <div class="form-group">
