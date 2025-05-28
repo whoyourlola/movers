@@ -1,0 +1,16 @@
+[2025-04-27 01:32:34] SUCCESS: Log recorded for user 4 at 2025-04-27 09:32:00, Location: MV (ID 4)
+[2025-04-27 01:35:27] SUCCESS: Log recorded for user 4 at 2025-04-27 09:35:00, Location: MV (ID 4)
+[2025-04-27 01:36:25] Location mismatch for user 4 at [14.7255127, 121.0372726]
+[2025-04-27 01:39:00] SUCCESS: Log recorded for user 4 at 2025-04-27 09:38:00, Location: DEV AREA (ID 3)
+[2025-04-27 01:40:22] SUCCESS: Log recorded for user 4 at 2025-04-27 09:40:00, Location: DEV AREA (ID 3)
+[2025-04-27 01:40:43] Location mismatch for user 4 at [14.725189, 121.0372726]
+[2025-04-27 01:41:03] Location mismatch for user 4 at [14.725189, 121.0372726]
+[2025-04-27 01:41:26] Location mismatch for user 4 at [14.725189, 121.0372726]
+[2025-04-27 01:41:43] Location mismatch for user 4 at [14.725189, 121.0372726]
+[2025-04-27 01:44:28] SUCCESS: Log recorded for user 4 at 2025-04-27 09:44:00, Location: MV (ID 4)
+[2025-04-27 01:46:34] SUCCESS: Log recorded for user 4 at 2025-04-27 09:46:00, Location: MV (ID 4)
+[2025-04-27 02:15:59] SUCCESS: Log recorded for user 8 at 2025-04-27 10:15:00, Location: MV (ID 4)
+[2025-04-27 02:22:35] Location mismatch for user 5 at [14.725189, 121.0372726]
+[2025-05-27 12:44:04] SUCCESS: Log recorded for user 4 at 2025-05-27 20:43:00, Location: DEV AREA (ID 3)
+[2025-05-27 12:46:01] SUCCESS: Log recorded for user 4 at 2025-05-27 20:45:00, Location: DEV AREA (ID 3)
+[2025-05-27 12:50:05] SUCCESS: Log recorded for user 4 at 2025-05-27 20:49:00, Location: DEV AREA (ID 3)
